@@ -1,5 +1,7 @@
 from typing import List
 
+# 1. Binary Search Problem no. 704 
+
 class BinarySearch:
     def search(self, nums: List[int] , target: int) -> int:
         start = 0
