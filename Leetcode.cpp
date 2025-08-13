@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// 1. Binary Search Problem no. 704 
+// =============== 1. Binary Search Problem no. 704 ===============
 class BinarySearch 
 {
 public:
@@ -21,7 +21,7 @@ public:
             else if(nums[mid] < target)
                 start = mid + 1;
             
-            else
+                else
                 end = mid - 1;
         }
         return -1;

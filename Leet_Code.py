@@ -1,6 +1,6 @@
 from typing import List
 
-# 1. Binary Search Problem no. 704 
+# =============== 1. Binary Search Problem no. 704 ===============
 
 class BinarySearch:
     def search(self, nums: List[int] , target: int) -> int:
@@ -19,7 +19,6 @@ class BinarySearch:
 
         return -1
     
-
 def inputArray() -> List[int]:
     nums = []
     print("Enter an array of integers in ascending order ending with -1!")
