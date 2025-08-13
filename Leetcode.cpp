@@ -30,7 +30,7 @@ public:
 
 void inputarray(vector<int>& nums)
 {
-    cout << "Enter an array of integers ending with -1 !\n";
+    cout << "Enter an array of integers in ascending order ending with -1 !\n";
     int n;
     while (true)
     {
