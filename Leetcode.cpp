@@ -1,9 +1,12 @@
+#include <unordered_map>
 #include<iostream>
 #include<vector>
 
 using namespace std;
 
 // =============== 1. Binary Search Problem no. 704 ===============
+// https://leetcode.com/problems/binary-search/?difficulty=EASY&page=1
+
 class BinarySearch 
 {
 public:
@@ -41,7 +44,7 @@ void inputarray(vector<int>& nums)
     }
 }
 
-int main()
+int main01()
 {
     vector<int> nums;
     int target;
@@ -55,6 +58,46 @@ int main()
         cout << "Target found at index " << index << endl;
     else
         cout << "Target not found\n";
+
+    return 0;
+}
+
+// =============== 2 Divide Array Into Equal Pairs (Problem # 2206.)  =============== 
+// https://leetcode.com/problems/divide-array-into-equal-pairs/description/?envType=daily-question&envId=2025-08-12
+
+
+class DivideArray 
+{
+public:
+    bool divideArray(vector<int>& nums) 
+    {
+        if(nums.size() % 2 != 0)
+            return false;
+
+         unordered_map<int, int> freq;
+
+        for(auto num : nums)
+            freq[num]++;
+        
+        for(auto &pair : freq)
+            if(pair.second % 2 != 0)
+                return false;
+
+        return true;
+        
+    }
+};
+
+int main() 
+{
+    DivideArray DA;
+
+    vector<int> nums1 = {3, 2, 3, 2, 2, 2};
+    vector<int> nums2 = {1, 2, 3, 4};
+
+    cout << boolalpha;
+    cout << DA.divideArray(nums1) << endl;  // true
+    cout << DA.divideArray(nums2) << endl;  // false
 
     return 0;
 }
