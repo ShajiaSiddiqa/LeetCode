@@ -1,5 +1,6 @@
 #include <unordered_map>
 #include<iostream>
+#include <string>
 #include<vector>
 
 using namespace std;
@@ -100,4 +101,54 @@ int main()
     cout << DA.divideArray(nums2) << endl;  // false
 
     return 0;
+}
+
+
+// ===============  Valid Anagram (Problem # 242) =============== 
+// https://leetcode.com/problems/valid-anagram/description/?difficulty=EASY&page=1
+
+class ValidAnagram 
+{
+public:
+    bool isAnagram(string s, string t) 
+    {
+        if (s.size() != t.size())
+            return false;
+
+        unordered_map<char,int> word_s;
+        unordered_map<char,int> word_t;
+
+        for(char w: s)
+            word_s[w]++;   
+
+        for(char w: t)
+            word_t[w]++;   
+
+        return word_s == word_t;
+    }
+};
+
+int main() 
+{
+    ValidAnagram sol;
+
+    // Test case 1
+    string s1 = "anagram";
+    string t1 = "nagaram";
+    cout << (sol.isAnagram(s1, t1) ? "true" : "false") << endl;
+
+    // Test case 2
+    string s2 = "rat";
+    string t2 = "car";
+    cout << (sol.isAnagram(s2, t2) ? "true" : "false") << endl;
+
+    // Test case 3
+    string s3(200, 'a');
+    s3.back() = 'b'; // last char 'b'
+    string t3(200, 'b');
+    t3.back() = 'a'; // last char 'a'
+    cout << (sol.isAnagram(s3, t3) ? "true" : "false") << endl;
+    
+    return 0;
+
 }
